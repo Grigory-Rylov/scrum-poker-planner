@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">MvvmStateLessExample</string>
+    <string name="error_no_internet">No intenet</string>
+</resources>
