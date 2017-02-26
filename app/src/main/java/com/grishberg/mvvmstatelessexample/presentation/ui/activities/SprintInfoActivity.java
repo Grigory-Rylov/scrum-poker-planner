@@ -9,7 +9,6 @@ import android.widget.TextView;
 import com.grishberg.mvpstatelibrary.framework.ui.BaseMvpActivity;
 import com.grishberg.mvvmstatelessexample.R;
 import com.grishberg.mvvmstatelessexample.presentation.presenters.SprintInfoPresenter;
-import com.grishberg.mvvmstatelessexample.presentation.state.sprint.SprintInfoState;
 import com.grishberg.mvvmstatelessexample.presentation.state.sprint.SprintInfoState.RequestSprintInfo;
 import com.grishberg.mvvmstatelessexample.presentation.state.sprint.SprintInfoViewState;
 import com.grishberg.mvvmstatelessexample.presentation.state.sprint.SprintInfoViewState.*;
@@ -31,7 +30,9 @@ public class SprintInfoActivity extends BaseMvpActivity<SprintInfoPresenter, Spr
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sprint_info_activity);
         sprintName = (TextView) findViewById(R.id.sprint_info_name);
-        getPresenter().updateState(new RequestSprintInfo());
+        if (savedInstanceState == null) {
+            getPresenter().updateState(new RequestSprintInfo());
+        }
     }
 
     @Override
