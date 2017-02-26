@@ -1,25 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    android:id="@+id/activity_main"
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.grishberg.mvvmstatelessexample.presentation.ui.activities.JointToSprintActivity">
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="@dimen/auth_icon_size"
+        android:layout_height="@dimen/auth_icon_size"
+        android:layout_gravity="center_horizontal"
+        android:src="@mipmap/ic_launcher"/>
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"/>
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/auth_title_text_top_margin"
+        android:text="@string/auth_title"
+        android:textSize="@dimen/auth_title_text_size"
+        />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/auth_screen_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/auth_login_hint"
+            android:inputType="text"
+            android:maxLength="32"
+            android:textSize="@dimen/auth_login_text_size"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:id="@+id/auth_screen_token"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/auth_token_hint"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:textSize="@dimen/auth_login_text_size"/>
+    </android.support.design.widget.TextInputLayout>
+
+
+    <Button
+        android:id="@+id/auth_screen_button_enter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/auth_join_button_top_margin"
+        android:text="@string/auth_enter_button_caption"/>
 
     <ProgressBar
-        android:id="@+id/joint_to_sprint_progress"
+        android:id="@+id/auth_screen_progress"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
         android:visibility="gone"/>
-</RelativeLayout>
+</LinearLayout>

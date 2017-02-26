@@ -2,6 +2,7 @@ package com.grishberg.mvvmstatelessexample.domain.storage;
 
 import com.grishberg.mvvmstatelessexample.domain.model.UserContainer;
 
+import rx.Observable;
 import rx.Single;
 
 /**
@@ -11,9 +12,9 @@ import rx.Single;
 public interface AuthTokenStorage {
     void storeCurrentCredential(String sprintToken, UserContainer data);
 
-    Single<String> requestSprintToken();
+    Observable<String> requestSprintToken();
 
-    Single<String> requestAccessToken();
+    Observable<String> requestAccessToken();
 
-    Single<String> requestUserName();
+    Observable<String> requestUserName();
 }

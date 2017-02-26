@@ -3,6 +3,8 @@ package com.grishberg.mvvmstatelessexample.di.modules;
 import com.grishberg.mvvmstatelessexample.domain.repository.Api;
 import com.grishberg.mvvmstatelessexample.domain.repository.AuthRepository;
 import com.grishberg.mvvmstatelessexample.domain.repository.AuthRepositoryImpl;
+import com.grishberg.mvvmstatelessexample.domain.repository.SprintRepository;
+import com.grishberg.mvvmstatelessexample.domain.repository.SprintRepositoryImpl;
 import com.grishberg.mvvmstatelessexample.domain.storage.AuthTokenStorage;
 
 import javax.inject.Singleton;
@@ -19,5 +21,11 @@ public class RepositoryModule {
     @Provides
     AuthRepository provideAuthRepository(final Api api, final AuthTokenStorage tokenStorage) {
         return new AuthRepositoryImpl(api, tokenStorage);
+    }
+
+    @Singleton
+    @Provides
+    SprintRepository provideSprintResository(final Api api, final AuthTokenStorage tokenStorage) {
+        return new SprintRepositoryImpl(api, tokenStorage);
     }
 }

@@ -5,6 +5,7 @@ import android.content.Context;
 import com.grishberg.mvvmstatelessexample.domain.model.UserContainer;
 import com.grishberg.mvvmstatelessexample.utils.SharedPreferenceUtils;
 
+import rx.Observable;
 import rx.Single;
 
 /**
@@ -30,17 +31,17 @@ public class AuthTokenStorageImpl implements AuthTokenStorage {
     }
 
     @Override
-    public Single<String> requestSprintToken() {
-        return Single.just(sharedPreference.getString(PREF_SPRINT_TOKEN));
+    public Observable<String> requestSprintToken() {
+        return Observable.just(sharedPreference.getString(PREF_SPRINT_TOKEN));
     }
 
     @Override
-    public Single<String> requestAccessToken() {
-        return Single.just(sharedPreference.getString(PREF_ACCESS_TOKEN));
+    public Observable<String> requestAccessToken() {
+        return Observable.just(sharedPreference.getString(PREF_ACCESS_TOKEN));
     }
 
     @Override
-    public Single<String> requestUserName() {
-        return Single.just(sharedPreference.getString(PREF_NAME));
+    public Observable<String> requestUserName() {
+        return Observable.just(sharedPreference.getString(PREF_NAME));
     }
 }

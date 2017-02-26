@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">MvvmStateLessExample</string>
     <string name="error_no_internet">No intenet</string>
+    <string name="auth_title">Join to sprint</string>
+    <string name="auth_login_hint">Name</string>
+    <string name="auth_token_hint">Sprint token from server</string>
+    <string name="auth_enter_button_caption">Join</string>
+    <string name="error_unknown">Server error</string>
 </resources>

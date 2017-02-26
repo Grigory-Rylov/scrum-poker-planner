@@ -4,7 +4,8 @@ import com.grishberg.mvpstatelibrary.framework.state.MvpState;
 import com.grishberg.mvpstatelibrary.framework.state.StateReceiver;
 import com.grishberg.mvvmstatelessexample.domain.exceptions.AppException;
 import com.grishberg.mvvmstatelessexample.domain.storage.AuthTokenStorage;
-import com.grishberg.mvvmstatelessexample.presentation.state.auth.JointToSprintViewState.*;
+import com.grishberg.mvvmstatelessexample.presentation.state.auth.JoinToSprintState;
+import com.grishberg.mvvmstatelessexample.presentation.state.auth.JoinToSprintState.*;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -35,10 +36,10 @@ public class AuthRepositoryImpl implements AuthRepository {
                     return Observable.just(true);
                 })
                 .subscribe(
-                        response -> presenter.updateState(new JoinToSprintModelStateSuccess()),
+                        response -> presenter.updateState(new JointToSprintSuccessResponse()),
                         exception -> {
                             if (exception instanceof AppException) {
-                                presenter.updateState(new JoinToSprintModelStateError((AppException) exception));
+                                presenter.updateState(new JointToSprintFailResponse((AppException) exception));
                             }
                         }
                 );

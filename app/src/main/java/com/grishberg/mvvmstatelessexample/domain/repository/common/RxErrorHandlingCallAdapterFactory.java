@@ -8,7 +8,6 @@ import retrofit2.CallAdapter;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import rx.Observable;
-import rx.functions.Func1;
 
 /**
  * Created by grishberg on 27.11.16.
@@ -23,12 +22,12 @@ public class RxErrorHandlingCallAdapterFactory<T> extends CallAdapter.Factory {
     }
 
     public static <T> CallAdapter.Factory create(final SoftErrorDelegate<T> softErrorDelegate) {
-        return new RxErrorHandlingCallAdapterFactory(softErrorDelegate);
+        return new RxErrorHandlingCallAdapterFactory<T>(softErrorDelegate);
     }
 
     @Override
     public CallAdapter<?> get(final Type returnType, final Annotation[] annotations, final Retrofit retrofit) {
-        return new RxCallAdapterWrapper(
+        return new RxCallAdapterWrapper<>(
                 original.get(returnType, annotations, retrofit),
                 softErrorDelegate);
     }
@@ -59,10 +58,8 @@ public class RxErrorHandlingCallAdapterFactory<T> extends CallAdapter.Factory {
                             return Observable.error(throwable);
                         }
                         return Observable.just(restResponse);
-                    }
+                    });
         }
-
-        );
     }
 }
-}
+

@@ -1,9 +1,11 @@
 package com.grishberg.mvvmstatelessexample.domain.repository;
 
+import com.grishberg.mvvmstatelessexample.domain.model.SprintInfo;
 import com.grishberg.mvvmstatelessexample.domain.model.UserContainer;
 import com.grishberg.mvvmstatelessexample.domain.model.rest.RestResponse;
 
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.Query;
 import rx.Observable;
 
@@ -13,7 +15,7 @@ import rx.Observable;
 
 public interface Api {
 
-    @GET("registerMember")
+    @POST("registerMember")
     Observable<RestResponse<UserContainer>> registerMember(
             @Query("name") String name,
             @Query("sprintToken") String sprintToken
@@ -21,6 +23,11 @@ public interface Api {
 
     @GET("getCurrentTaskForSprint")
     Observable<RestResponse<UserContainer>> getCurrentTaskForSprint(
+            @Query("sprintToken") String sprintToken
+    );
+
+    @GET("getSprintInfo")
+    Observable<RestResponse<SprintInfo>> getSprintInfo(
             @Query("sprintToken") String sprintToken
     );
 }
