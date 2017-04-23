@@ -1,6 +1,6 @@
 package com.grishberg.mvvmstatelessexample.presentation.state.sprint;
 
-import com.grishberg.mvpstatelibrary.framework.state.MvpState;
+import com.github.mvpstatelib.framework.state.AbsMvpState;
 import com.grishberg.mvvmstatelessexample.domain.exceptions.AppException;
 
 import java.util.Date;
@@ -11,7 +11,7 @@ import lombok.Getter;
  * Created by grishberg on 26.02.17.
  */
 
-public class SprintInfoState implements MvpState {
+public class SprintInfoState extends AbsMvpState {
 
     public static class RequestSprintInfo extends SprintInfoState {
     }

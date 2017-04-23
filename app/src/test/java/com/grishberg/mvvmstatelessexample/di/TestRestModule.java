@@ -2,6 +2,8 @@ package com.grishberg.mvvmstatelessexample.di;
 
 import com.grishberg.mvvmstatelessexample.domain.repository.Api;
 import com.grishberg.mvvmstatelessexample.domain.repository.AuthRepository;
+import com.grishberg.mvvmstatelessexample.domain.repository.SprintRepository;
+import com.grishberg.mvvmstatelessexample.domain.repository.SprintRepositoryImpl;
 import com.grishberg.mvvmstatelessexample.domain.storage.AuthTokenStorage;
 import com.grishberg.mvvmstatelessexample.utils.Logger;
 import com.grishberg.mvvmstatelessexample.utils.LoggerImpl;
@@ -48,6 +50,12 @@ public class TestRestModule {
     @Singleton
     AuthRepository provideAuthRepository() {
         return Mockito.mock(AuthRepository.class);
+    }
+
+    @Singleton
+    @Provides
+    SprintRepository provideSprintResository(final Api api, final AuthTokenStorage tokenStorage) {
+        return Mockito.mock(SprintRepository.class);
     }
 }
 

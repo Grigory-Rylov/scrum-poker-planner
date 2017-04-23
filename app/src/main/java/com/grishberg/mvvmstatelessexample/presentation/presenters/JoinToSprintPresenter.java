@@ -2,13 +2,12 @@ package com.grishberg.mvvmstatelessexample.presentation.presenters;
 
 import android.support.annotation.NonNull;
 
-import com.grishberg.mvpstatelibrary.framework.presenter.BaseMvpPresenter;
-import com.grishberg.mvpstatelibrary.framework.state.MvpState;
+import com.github.mvpstatelib.framework.presenter.BaseMvpPresenter;
+import com.github.mvpstatelib.framework.state.MvpState;
 import com.grishberg.mvvmstatelessexample.di.DiManager;
 import com.grishberg.mvvmstatelessexample.domain.exceptions.AppException;
 import com.grishberg.mvvmstatelessexample.domain.repository.AuthRepository;
 import com.grishberg.mvvmstatelessexample.presentation.state.auth.JoinToSprintState.*;
-import com.grishberg.mvvmstatelessexample.presentation.state.auth.JointToSprintViewState;
 import com.grishberg.mvvmstatelessexample.presentation.state.auth.JointToSprintViewState.*;
 
 import javax.inject.Inject;
@@ -17,7 +16,7 @@ import javax.inject.Inject;
  * Created by grishberg on 26.02.17.
  */
 
-public class JoinToSprintPresenter extends BaseMvpPresenter<JointToSprintViewState> {
+public class JoinToSprintPresenter extends BaseMvpPresenter {
     @Inject
     AuthRepository authRepository;
 

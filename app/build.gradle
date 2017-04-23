@@ -29,7 +29,7 @@ android {
 
 dependencies {
     String support_version = "25.2.0"
-    String mvvm_lib_version = "0.1.0"
+    String mvp_lib_version = "0.1.7"
     String dagger_version = "2.9"
     String retrofit_version = "2.1.0"
     String okhttp_version = "3.4.1"
@@ -67,8 +67,10 @@ dependencies {
     provided "org.projectlombok:lombok:$lombok_version"
     apt "org.projectlombok:lombok:$lombok_version"
 
-    //my mvvm lib
-    compile "com.grishberg:yet-another-mvvm-lib:$mvvm_lib_version"
+    //my mvp lib
+    compile "com.github.mvplib:mvp-state-lib:$mvp_lib_version"
+    provided "com.github.mvplib:mvp-state-processor:$mvp_lib_version"
+    apt "com.github.mvplib:mvp-state-processor:$mvp_lib_version"
 
     // rx
     compile 'com.google.code.gson:gson:2.6.2'

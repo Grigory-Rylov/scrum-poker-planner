@@ -6,7 +6,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.grishberg.mvpstatelibrary.framework.ui.BaseMvpActivity;
+import com.github.mvpstatelib.framework.state.MvpState;
+import com.github.mvpstatelib.framework.ui.BaseMvpActivity;
 import com.grishberg.mvvmstatelessexample.R;
 import com.grishberg.mvvmstatelessexample.domain.exceptions.AppException.*;
 import com.grishberg.mvvmstatelessexample.presentation.presenters.JoinToSprintPresenter;
@@ -14,7 +15,7 @@ import com.grishberg.mvvmstatelessexample.presentation.state.auth.JoinToSprintSt
 import com.grishberg.mvvmstatelessexample.presentation.state.auth.JointToSprintViewState;
 import com.grishberg.mvvmstatelessexample.presentation.state.auth.JointToSprintViewState.*;
 
-public class JointToSprintActivity extends BaseMvpActivity<JoinToSprintPresenter, JointToSprintViewState> {
+public class JointToSprintActivity extends BaseMvpActivity<JoinToSprintPresenter> {
 
     private View progressBar;
     private View joinButton;
@@ -49,7 +50,7 @@ public class JointToSprintActivity extends BaseMvpActivity<JoinToSprintPresenter
     }
 
     @Override
-    public void onModelUpdated(JointToSprintViewState state) {
+    public void onStateUpdated(MvpState state) {
         if (state instanceof JoinToSprintModelStateProgress) {
             showProgress(true);
             return;

@@ -6,18 +6,18 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.widget.TextView;
 
-import com.grishberg.mvpstatelibrary.framework.ui.BaseMvpActivity;
+import com.github.mvpstatelib.framework.state.MvpState;
+import com.github.mvpstatelib.framework.ui.BaseMvpActivity;
 import com.grishberg.mvvmstatelessexample.R;
 import com.grishberg.mvvmstatelessexample.presentation.presenters.SprintInfoPresenter;
 import com.grishberg.mvvmstatelessexample.presentation.state.sprint.SprintInfoState.RequestSprintInfo;
-import com.grishberg.mvvmstatelessexample.presentation.state.sprint.SprintInfoViewState;
 import com.grishberg.mvvmstatelessexample.presentation.state.sprint.SprintInfoViewState.*;
 
 /**
  * Created by grishberg on 26.02.17.
  */
 
-public class SprintInfoActivity extends BaseMvpActivity<SprintInfoPresenter, SprintInfoViewState> {
+public class SprintInfoActivity extends BaseMvpActivity<SprintInfoPresenter> {
 
     private TextView sprintName;
 
@@ -41,7 +41,7 @@ public class SprintInfoActivity extends BaseMvpActivity<SprintInfoPresenter, Spr
     }
 
     @Override
-    public void onModelUpdated(SprintInfoViewState state) {
+    public void onStateUpdated(MvpState state) {
         if (state instanceof SprintInfoSuccess) {
             showSprintState((SprintInfoSuccess) state);
             return;

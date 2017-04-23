@@ -1,7 +1,7 @@
 package com.grishberg.mvvmstatelessexample.domain.repository;
 
-import com.grishberg.mvpstatelibrary.framework.state.MvpState;
-import com.grishberg.mvpstatelibrary.framework.state.StateReceiver;
+import com.github.mvpstatelib.framework.state.MvpState;
+import com.github.mvpstatelib.framework.state.StateReceiver;
 import com.grishberg.mvvmstatelessexample.domain.exceptions.AppException;
 import com.grishberg.mvvmstatelessexample.domain.storage.AuthTokenStorage;
 import com.grishberg.mvvmstatelessexample.presentation.state.sprint.SprintInfoState.ReceiveErrorState;

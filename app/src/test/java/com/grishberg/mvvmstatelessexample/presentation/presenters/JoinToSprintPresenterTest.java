@@ -1,6 +1,6 @@
 package com.grishberg.mvvmstatelessexample.presentation.presenters;
 
-import com.grishberg.mvpstatelibrary.framework.state.StateObserver;
+import com.github.mvpstatelib.framework.state.StateObserver;
 import com.grishberg.mvvmstatelessexample.domain.exceptions.AppException.WrongAccessTokenException;
 import com.grishberg.mvvmstatelessexample.domain.model.rest.RestError;
 import com.grishberg.mvvmstatelessexample.domain.repository.AuthRepository;
@@ -23,8 +23,8 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class JoinToSprintPresenterTest extends BaseTestCase {
 
-    private static final String SPRINT_TOKEN = "1234";
     public static final String NAME = "name";
+    private static final String SPRINT_TOKEN = "1234";
     @Mock
     AuthRepository repository;
 
@@ -47,7 +47,7 @@ public class JoinToSprintPresenterTest extends BaseTestCase {
 
         presenter.updateState(new JointToSprintRequest(NAME, SPRINT_TOKEN));
 
-        verify(stateObserver, times(1)).onModelUpdated(any(JoinToSprintModelStateProgress.class));
+        verify(stateObserver, times(1)).onStateUpdated(any(JoinToSprintModelStateProgress.class));
         verify(repository, times(1)).registerMemberToSprint(NAME, SPRINT_TOKEN, presenter);
     }
 
@@ -56,9 +56,9 @@ public class JoinToSprintPresenterTest extends BaseTestCase {
 
         presenter.updateState(new JointToSprintSuccessResponse());
 
-        verify(stateObserver, never()).onModelUpdated(any(JoinToSprintModelStateProgress.class));
-        verify(stateObserver, never()).onModelUpdated(any(JoinToSprintModelStateError.class));
-        verify(stateObserver, times(1)).onModelUpdated(any(JoinToSprintModelStateSuccess.class));
+        verify(stateObserver, never()).onStateUpdated(any(JoinToSprintModelStateProgress.class));
+        verify(stateObserver, never()).onStateUpdated(any(JoinToSprintModelStateError.class));
+        verify(stateObserver, times(1)).onStateUpdated(any(JoinToSprintModelStateSuccess.class));
     }
 
     @Test
@@ -71,8 +71,8 @@ public class JoinToSprintPresenterTest extends BaseTestCase {
 
         presenter.updateState(new JointToSprintFailResponse(exception));
 
-        verify(stateObserver, never()).onModelUpdated(any(JoinToSprintModelStateProgress.class));
-        verify(stateObserver, never()).onModelUpdated(any(JoinToSprintModelStateSuccess.class));
-        verify(stateObserver, times(1)).onModelUpdated(any(JoinToSprintModelStateError.class));
+        verify(stateObserver, never()).onStateUpdated(any(JoinToSprintModelStateProgress.class));
+        verify(stateObserver, never()).onStateUpdated(any(JoinToSprintModelStateSuccess.class));
+        verify(stateObserver, times(1)).onStateUpdated(any(JoinToSprintModelStateError.class));
     }
 }

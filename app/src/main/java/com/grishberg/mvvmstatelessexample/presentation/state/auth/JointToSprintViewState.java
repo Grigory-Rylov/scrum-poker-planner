@@ -1,6 +1,6 @@
 package com.grishberg.mvvmstatelessexample.presentation.state.auth;
 
-import com.grishberg.mvpstatelibrary.framework.state.MvpState;
+import com.github.mvpstatelib.framework.state.AbsMvpState;
 import com.grishberg.mvvmstatelessexample.domain.exceptions.AppException;
 
 import lombok.Getter;
@@ -10,7 +10,7 @@ import lombok.Getter;
  */
 
 @Getter
-public class JointToSprintViewState implements MvpState {
+public class JointToSprintViewState extends AbsMvpState {
 
     public static class JoinToSprintModelStateProgress extends JointToSprintViewState {
     }
