@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="end_point">http://85.143.212.66:8080/poker-planner/v1.0/</string>
+    <string name="end_point">http://85.143.212.66:8001/poker-planner/v1.0/</string>
 </resources>
