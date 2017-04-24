@@ -1,4 +1,4 @@
-package com.grishberg.mvvmstatelessexample.domain.repository.common;
+package com.grishberg.reststacklib;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
@@ -10,8 +10,9 @@ import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import rx.Observable;
 
 /**
- * Created by grishberg on 27.11.16.
+ * Created by grishberg on 23.04.17.
  */
+
 public class RxErrorHandlingCallAdapterFactory<T> extends CallAdapter.Factory {
     private final RxJavaCallAdapterFactory original;
     private final SoftErrorDelegate<T> softErrorDelegate;

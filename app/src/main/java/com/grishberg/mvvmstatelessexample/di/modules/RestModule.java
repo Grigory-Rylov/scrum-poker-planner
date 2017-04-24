@@ -6,8 +6,8 @@ import com.google.gson.JsonDeserializer;
 import com.grishberg.mvvmstatelessexample.domain.exceptions.ErrorParser;
 import com.grishberg.mvvmstatelessexample.domain.model.rest.RestResponse;
 import com.grishberg.mvvmstatelessexample.domain.repository.Api;
-import com.grishberg.mvvmstatelessexample.domain.repository.common.RxErrorHandlingCallAdapterFactory;
-import com.grishberg.mvvmstatelessexample.domain.repository.common.SoftErrorDelegate;
+import com.grishberg.reststacklib.RxErrorHandlingCallAdapterFactory;
+import com.grishberg.reststacklib.SoftErrorDelegate;
 
 import java.util.Date;
 

@@ -3,7 +3,7 @@ package com.grishberg.mvvmstatelessexample.domain.exceptions;
 import android.support.annotation.NonNull;
 
 import com.grishberg.mvvmstatelessexample.domain.model.rest.RestResponse;
-import com.grishberg.mvvmstatelessexample.domain.repository.common.SoftErrorDelegate;
+import com.grishberg.reststacklib.SoftErrorDelegate;
 
 import static com.grishberg.mvvmstatelessexample.domain.exceptions.ErrorCodes.EMPTY_REQUIRED_ARGUMENTS_EXCEPTION;
 import static com.grishberg.mvvmstatelessexample.domain.exceptions.ErrorCodes.WRONG_ACCESS_TOKEN_EXCEPTION;

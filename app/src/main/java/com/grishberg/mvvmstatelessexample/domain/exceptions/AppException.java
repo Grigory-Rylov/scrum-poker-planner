@@ -3,6 +3,7 @@ package com.grishberg.mvvmstatelessexample.domain.exceptions;
 import android.support.annotation.NonNull;
 
 import com.grishberg.mvvmstatelessexample.domain.model.rest.RestError;
+import com.grishberg.reststacklib.BaseException;
 
 import lombok.Getter;
 
@@ -11,7 +12,7 @@ import lombok.Getter;
  */
 
 @Getter
-public class AppException extends Exception {
+public class AppException extends BaseException {
     private final int code;
 
     public AppException(@NonNull RestError error) {
