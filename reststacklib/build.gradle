@@ -1,6 +1,12 @@
 apply plugin: 'com.android.library'
 apply plugin: 'me.tatarka.retrolambda'
 
+ext {
+    PUBLISH_GROUP_ID = 'com.github.grigoryrylo'
+    PUBLISH_ARTIFACT_ID = 'reststacklib'
+    PUBLISH_VERSION = '0.1.0'
+}
+
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
@@ -9,7 +15,7 @@ android {
         minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
-        versionName "1.0"
+        versionName "0.1.0"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
@@ -50,3 +56,5 @@ dependencies {
     //gson
     compile "com.google.code.gson:gson:$gson_version"
 }
+//need to call  ./gradlew clean build generateReleas
+apply from: 'android-release-aar.gradle'
