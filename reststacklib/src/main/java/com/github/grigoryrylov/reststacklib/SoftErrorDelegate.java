@@ -1,4 +1,4 @@
-package com.github.childrenofthecorn.reststacklib;
+package com.github.grigoryrylov.reststacklib;
 
 /**
  * Created by grishberg on 23.04.17.

@@ -1,4 +1,4 @@
-package com.grishberg.reststacklib;
+package com.github.grigoryrylov.reststacklib.exception;
 
 /**
  * Created by grishberg on 23.04.17.

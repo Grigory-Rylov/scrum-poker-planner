@@ -1,4 +1,4 @@
-package com.github.childrenofthecorn.reststacklib;
+package com.github.grigoryrylov.reststacklib;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

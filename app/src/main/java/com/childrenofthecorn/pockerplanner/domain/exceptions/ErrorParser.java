@@ -3,7 +3,7 @@ package com.childrenofthecorn.pockerplanner.domain.exceptions;
 import android.support.annotation.NonNull;
 
 import com.childrenofthecorn.pockerplanner.domain.model.rest.RestResponse;
-import com.github.childrenofthecorn.reststacklib.SoftErrorDelegate;
+import com.github.grigoryrylov.reststacklib.SoftErrorDelegate;
 
 import static com.childrenofthecorn.pockerplanner.domain.exceptions.ErrorCodes.WRONG_ACCESS_TOKEN_EXCEPTION;
 import static com.childrenofthecorn.pockerplanner.domain.exceptions.ErrorCodes.WRONG_SPRINT_TOKEN_EXCEPTION;

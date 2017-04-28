@@ -3,7 +3,7 @@ package com.childrenofthecorn.pockerplanner.domain.exceptions;
 import android.support.annotation.NonNull;
 
 import com.childrenofthecorn.pockerplanner.domain.model.rest.RestError;
-import com.github.childrenofthecorn.reststacklib.exception.BaseException;
+import com.github.grigoryrylov.reststacklib.exception.BaseException;
 
 import lombok.Getter;
 

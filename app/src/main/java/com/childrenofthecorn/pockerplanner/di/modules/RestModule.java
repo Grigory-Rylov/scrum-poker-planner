@@ -3,8 +3,8 @@ package com.childrenofthecorn.pockerplanner.di.modules;
 import com.childrenofthecorn.pockerplanner.domain.exceptions.ErrorParser;
 import com.childrenofthecorn.pockerplanner.domain.model.rest.RestResponse;
 import com.childrenofthecorn.pockerplanner.domain.repository.Api;
-import com.github.childrenofthecorn.reststacklib.RetrofitBuilder;
-import com.github.childrenofthecorn.reststacklib.SoftErrorDelegate;
+import com.github.grigoryrylov.reststacklib.RetrofitBuilder;
+import com.github.grigoryrylov.reststacklib.SoftErrorDelegate;
 
 import javax.inject.Singleton;
 

@@ -1,8 +1,8 @@
-package com.github.childrenofthecorn.reststacklib;
+package com.github.grigoryrylov.reststacklib;
 
 import android.support.annotation.Nullable;
 
-import com.github.childrenofthecorn.reststacklib.exception.BaseException;
+import com.github.grigoryrylov.reststacklib.exception.BaseException;
 
 import java.io.Serializable;
 

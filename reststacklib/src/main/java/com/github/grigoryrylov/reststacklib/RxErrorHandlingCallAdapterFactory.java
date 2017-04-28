@@ -1,4 +1,4 @@
-package com.github.childrenofthecorn.reststacklib;
+package com.github.grigoryrylov.reststacklib;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Type;
