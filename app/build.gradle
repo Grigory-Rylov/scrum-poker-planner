@@ -19,6 +19,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    productFlavors {
+        localServer {}
+        remoteServer {}
+    }
     buildTypes {
         release {
             minifyEnabled false
@@ -29,22 +33,14 @@ android {
 
 dependencies {
     String support_version = "25.2.0"
-    String mvp_lib_version = "0.1.7"
+    String mvp_lib_version = "0.2.0"
     String dagger_version = "2.9"
-    String retrofit_version = "2.1.0"
-    String okhttp_version = "3.4.1"
     String lombok_version = "1.12.6"
     compile "com.android.support:appcompat-v7:$support_version"
     compile "com.android.support:support-v4:$support_version"
     compile "com.android.support:recyclerview-v7:$support_version"
     compile "com.android.support:design:$support_version"
-    // retrofit 2
-    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
-    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
-    compile "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
-    //okhttp
-    compile "com.squareup.okhttp3:okhttp:$okhttp_version"
-    compile "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
     //dagger
     testCompile "com.google.dagger:dagger:$dagger_version"
     compile "com.google.dagger:dagger:$dagger_version"
@@ -59,13 +55,16 @@ dependencies {
     //lombok
     provided "org.projectlombok:lombok:$lombok_version"
     apt "org.projectlombok:lombok:$lombok_version"
+
     //my mvp lib
     compile "com.github.mvplib:mvp-state-lib:$mvp_lib_version"
     provided "com.github.mvplib:mvp-state-processor:$mvp_lib_version"
     apt "com.github.mvplib:mvp-state-processor:$mvp_lib_version"
     testApt "com.github.mvplib:mvp-state-processor:$mvp_lib_version"
+
     // rx
-    compile 'com.google.code.gson:gson:2.6.2'
+    compile 'com.google.code.gson:gson:2.7'
+
     compile 'io.reactivex:rxandroid:1.2.1'
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'org.mockito:mockito-core:2.+'

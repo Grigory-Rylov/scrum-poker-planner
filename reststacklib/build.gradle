@@ -29,6 +29,7 @@ android {
 dependencies {
     String retrofit_version = "2.1.0"
     String okhttp_version = "3.4.1"
+    String gson_version = "2.7"
 
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -45,4 +46,7 @@ dependencies {
     //okhttp
     compile "com.squareup.okhttp3:okhttp:$okhttp_version"
     compile "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+
+    //gson
+    compile "com.google.code.gson:gson:$gson_version"
 }
