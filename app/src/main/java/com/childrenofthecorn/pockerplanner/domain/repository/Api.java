@@ -11,6 +11,7 @@ import rx.Observable;
 
 /**
  * Created by grishberg on 26.02.17.
+ * REST API description
  */
 
 public interface Api {

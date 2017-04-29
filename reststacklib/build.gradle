@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'me.tatarka.retrolambda'
 
 ext {
-    PUBLISH_GROUP_ID = 'com.github.grigoryrylo'
+    PUBLISH_GROUP_ID = 'com.github.grigoryrylov'
     PUBLISH_ARTIFACT_ID = 'reststacklib'
     PUBLISH_VERSION = '0.1.0'
 }
@@ -20,6 +20,17 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
+
+    lintOptions {
+        // set to true to turn off analysis progress reporting by lint
+        quiet true
+        // if true, stop the gradle build if errors are found
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings true
+        lintConfig file("lint.xml")
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -50,9 +61,11 @@ dependencies {
     compile "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
 
     //okhttp
-    compile "com.squareup.okhttp3:okhttp:$okhttp_version"
-    compile "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
 
+    compile "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    compile("com.squareup.okhttp3:okhttp:$okhttp_version") {
+        exclude group: 'com.squareup.okio', module: 'okio'
+    }
     //gson
     compile "com.google.code.gson:gson:$gson_version"
 }

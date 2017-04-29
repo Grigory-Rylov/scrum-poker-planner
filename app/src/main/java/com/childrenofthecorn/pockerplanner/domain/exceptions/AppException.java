@@ -9,6 +9,7 @@ import lombok.Getter;
 
 /**
  * Created by grishberg on 26.02.17.
+ * Exceptions from REST
  */
 
 @Getter

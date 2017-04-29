@@ -5,8 +5,18 @@ apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'org.greenrobot.greendao'
 
 android {
+    lintOptions {
+        // set to true to turn off analysis progress reporting by lint
+        quiet true
+        // if true, stop the gradle build if errors are found
+        abortOnError false
+        // if true, only report errors
+        ignoreWarnings true
+        lintConfig file("lint.xml")
+    }
     compileSdkVersion 25
     buildToolsVersion "25.0.2"
+
     defaultConfig {
         applicationId "com.grishberg.mvvmstatelessexample"
         minSdkVersion 16
@@ -67,11 +77,12 @@ dependencies {
 
     compile 'io.reactivex:rxandroid:1.2.1'
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    testCompile 'org.mockito:mockito-core:2.+'
+    testCompile 'org.mockito:mockito-core:2.2.0'
+    testCompile 'junit:junit:4.12'
+
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    testCompile 'junit:junit:4.12'
     compile project(':reststacklib')
 }
 greendao {

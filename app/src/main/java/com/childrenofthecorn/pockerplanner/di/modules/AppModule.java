@@ -12,6 +12,7 @@ import dagger.Provides;
 
 /**
  * Created by grishberg on 26.02.17.
+ * Common dependency
  */
 @Module
 public class AppModule {

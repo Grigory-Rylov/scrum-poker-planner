@@ -13,6 +13,7 @@ import com.squareup.leakcanary.LeakCanary;
 
 /**
  * Created by grishberg on 26.02.17.
+ * App settings
  */
 
 public class App extends Application {
